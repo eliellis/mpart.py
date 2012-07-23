@@ -23,7 +23,7 @@ except Exception, e:
 <h5>Simple right? Just pass your form data to the mpart_encode function in the form of two dictionaries (one containing post fields, the other files) and you get the 'content-type' header and the encoded data back.</h5>
 <hr/>
 <h1>What you get back.</h1>
-<h5>When you call mpart_encode, you pass in form data, but how is all that encoding handed back?</h5>
+<h5>When you call mpart_encode, you pass in some form data, but how is all that handed back?</h5>
 ```python
 import mpart
 data = {'name':'John Doe', 'email':'johndoe@mail.com'}
@@ -32,7 +32,7 @@ multipart = mpart_encode(data, files)
 print multipart[0]
 print multipart[1]
 ```
-<h5>This yeilds the output:</h5>
+<h5>This yeilds the output (where the boundary is generated randomly):</h5>
 ```text
 multipart/form-data, boundary=9q3ep42ief
 --9q3ep42ief
