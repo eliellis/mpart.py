@@ -7,12 +7,12 @@ import mpart, urllib2
 fields = {'paste[body]':'Hello World!', 'paste[authorization]':'burger', 'paste[restricted]':'0','paste[parser_id]':'4','key':'','lang':''}
 files = {}
 
-mpart = mpart_encode(fields, files)
+mpartdata = mpart.mpart_encode(fields, files)
 req = urllib2.Request('http://pastie.org/pastes')
-req.add_header('content-type', mpart[0])
+req.add_header('content-type', mpartdata[0])
 req.add_header('user-agent', 'mpart-encoder tutorial 1.0')
-req.add_header('content-length', len(mpart[1]))
-req.add_data(mpart[1])
+req.add_header('content-length', len(mpartdata[1]))
+req.add_data(mpartdata[1])
 try:
 	resp = urllib2.urlopen(req)
 	print resp.url
@@ -28,7 +28,7 @@ except Exception, e:
 import mpart
 data = {'name':'John Doe', 'email':'johndoe@mail.com'}
 files = {}
-multipart = mpart_encode(data, files)
+multipart = mpart.mpart_encode(data, files)
 print multipart[0]
 print multipart[1]
 ```
