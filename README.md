@@ -33,7 +33,7 @@ print multipart[0]
 print multipart[1]
 ```
 <h5>This yeilds the output (where the boundary is generated randomly):</h5>
-```text
+```
 multipart/form-data, boundary=9q3ep42ief
 --9q3ep42ief
 Content-Disposition: form-data; name="name"
