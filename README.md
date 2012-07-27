@@ -7,7 +7,7 @@ import mpart, urllib2
 fields = {'paste[body]':'Hello World!', 'paste[authorization]':'burger', 'paste[restricted]':'0','paste[parser_id]':'4','key':'','lang':''}
 files = {}
 
-mpartdata = mpart.mpart_encode(fields, files)
+mpartdata = mpart.encode(fields, files)
 req = urllib2.Request('http://pastie.org/pastes')
 req.add_header('content-type', mpartdata[0])
 req.add_header('user-agent', 'mpart-encoder tutorial 1.0')
@@ -20,15 +20,15 @@ except Exception, e:
 	print e.read()
 ```
 
-<h5>Simple right? Just pass your form data to the mpart_encode function in the form of two dictionaries (one containing post fields, the other files) and you get the 'content-type' header and the encoded data back.</h5>
+<h5>Simple right? Just pass your form data to the encode function in the form of two dictionaries (one containing post fields, the other files) and you get the 'content-type' header and the encoded data back.</h5>
 <hr/>
 <h1>What you get back.</h1>
-<h5>When you call mpart_encode, you pass in some form data, but how is all that handed back?</h5>
+<h5>When you call encode, you pass in some form data, but how is all that handed back?</h5>
 ```python
 import mpart
 data = {'name':'John Doe', 'email':'johndoe@mail.com'}
 files = {}
-multipart = mpart.mpart_encode(data, files)
+multipart = mpart.encode(data, files)
 print multipart[0]
 print multipart[1]
 ```
