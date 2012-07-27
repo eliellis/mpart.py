@@ -1,5 +1,5 @@
 <h1>Usage</h1>
-Just import mpart.py, create a dictionary containing form-data (plain feild data or some files) and call `mpart.encode(your dictionary)` and you're data is now ready for the big time.
+Just import mpart.py, create a dictionary containing form-data and call `mpart.encode(your dictionary)` and your data is now ready for the big time.
 <hr/>
 <h1>Example</h1>
 <h5>Using mpart.py is as easy as it could get. Consider the following example script that posts a simple string to pastie.org:</h5>
