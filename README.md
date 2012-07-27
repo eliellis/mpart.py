@@ -1,15 +1,18 @@
-<h1>Usage.</h1>
-<h5>Using mpart-encoder is as easy as it could get. Consider the following example script that posts a simple string to pastie.org:</h5>
+<h1>Usage</h1>
+<h3>Just import mpart.py, create a dictionary containing form-data (plain feild data or some files) and call `mpart.encode(your dictionary)` and you're data is now ready for the big time.</h3>
+<hr/>
+<h1>Example</h1>
+<h5>Using mpart.py is as easy as it could get. Consider the following example script that posts a simple string to pastie.org:</h5>
 
 ```python
 import mpart, urllib2
 
-fields = {'paste[body]':'Hello World!', 'paste[authorization]':'burger', 'paste[restricted]':'0','paste[parser_id]':'4','key':'','lang':''}
+fields = {'paste[body]':'Hello World!', 'paste[authorization]':'burger', 'paste[restricted]':'0','paste[parser_id]':'6','key':'','lang':''}
 
 mpartdata = mpart.encode(fields)
 req = urllib2.Request('http://pastie.org/pastes')
 req.add_header('content-type', mpartdata[0])
-req.add_header('user-agent', 'mpart-encoder tutorial 1.0')
+req.add_header('user-agent', 'mpart.py tutorial 1.0')
 req.add_header('content-length', len(mpartdata[1]))
 req.add_data(mpartdata[1])
 try:
@@ -19,7 +22,7 @@ except Exception, e:
 	print e.read()
 ```
 
-<h5>Simple right? Just pass your form data to the encode function in the form of two dictionaries (one containing post fields, the other files) and you get the 'content-type' header and the encoded data back.</h5>
+<h5>Simple right? Just pass your form data to the encode function in the form of one dictionary (containing fields and or files) and you get the 'content-type' header and the encoded data back.</h5>
 <hr/>
 <h1>What you get back.</h1>
 <h5>When you call encode, you pass in some form data, but how is all that handed back?</h5>
