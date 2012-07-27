@@ -28,7 +28,7 @@ except Exception, e:
 
 <h5>Simple right? Just pass your form data to the encode function in the form of one dictionary (containing fields and or files) and you get the 'content-type' header and the encoded data back.</h5>
 <hr/>
-<h1>What you get back.</h1>
+<h1>What you get back</h1>
 <h5>When you call encode, you pass in some form data, but how is all that handed back?</h5>
 ```python
 import mpart
