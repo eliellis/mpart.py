@@ -5,9 +5,8 @@
 import mpart, urllib2
 
 fields = {'paste[body]':'Hello World!', 'paste[authorization]':'burger', 'paste[restricted]':'0','paste[parser_id]':'4','key':'','lang':''}
-files = {}
 
-mpartdata = mpart.encode(fields, files)
+mpartdata = mpart.encode(fields)
 req = urllib2.Request('http://pastie.org/pastes')
 req.add_header('content-type', mpartdata[0])
 req.add_header('user-agent', 'mpart-encoder tutorial 1.0')
@@ -27,8 +26,7 @@ except Exception, e:
 ```python
 import mpart
 data = {'name':'John Doe', 'email':'johndoe@mail.com'}
-files = {}
-multipart = mpart.encode(data, files)
+multipart = mpart.encode(data)
 print multipart[0]
 print multipart[1]
 ```
