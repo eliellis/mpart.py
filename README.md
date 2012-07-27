@@ -1,5 +1,6 @@
 <h1>Usage</h1>
 Just import mpart.py, create a dictionary containing form-data and call `mpart.encode(your dictionary)` and your data is now ready for the big time.
+  * The keys to the dictionary should correspond to the form you are posting, such that if an html-form contained an input element like `<textarea rows="2" cols="10" name="content"></textarea>` you should create a dictionary like `data = {'content':'I am posting some content'}` to successfully post to the form.
   * The dictionary can contain files, just make sure to pass in a file-like object that supports the `read()` method.
 
 <hr/>
