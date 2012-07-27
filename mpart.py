@@ -1,6 +1,6 @@
 import random, mimetypes, string
 
-def encode(fields={}):
+def encode(fields):
 	random_boundary = __randy_boundary()
 	content_type = "multipart/form-data, boundary=%s" % random_boundary
 
