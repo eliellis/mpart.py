@@ -36,6 +36,3 @@ def __randy_boundary(length=10,reshuffle=False):
 	else:
 		pass
 	return ''.join(boundary_string)
-
-data = {'nig':'nog','fuck':'yes please','file':open('README.md')}
-print encode(data)[1]
