@@ -1,4 +1,4 @@
-import random, mimetypes
+import random, mimetypes, string
 
 def encode(fields={}, files={}):
 	random_boundary = __randy_boundary()
@@ -24,7 +24,7 @@ def encode(fields={}, files={}):
 	return content_type, ''.join(form_data)
 
 def __randy_boundary(length=10,reshuffle=False):
-	character_string = "abcdefghijklmnopqrstuvwxz1234567890"
+	character_string = string.letters+string.digits
 	boundary_string = []
 	for i in range(0,length):
 		rand_index = random.randint(0,len(character_string) - 1)
